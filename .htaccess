@@ -1,0 +1,21 @@
+AddType application/xml .xml
+AddType application/xml;charset=utf-8 .xml
+
+<Files "sitemap.xml">
+    ForceType application/xml
+</Files>
+
+<FilesMatch "\.xml$">
+    Header set Content-Type "application/xml"
+</FilesMatch>
+
+DirectoryIndex index.html
+
+ErrorDocument 400 http://baka-wiki.rf.gd/error/400.html
+ErrorDocument 401 http://baka-wiki.rf.gd/error/401.html
+ErrorDocument 403 http://baka-wiki.rf.gd/error/403.html
+ErrorDocument 404 http://baka-wiki.rf.gd/error/404.html
+ErrorDocument 500 http://baka-wiki.rf.gd/error/500.html
+ErrorDocument 503 http://baka-wiki.rf.gd/error/503.html
+
+Options -Indexes
