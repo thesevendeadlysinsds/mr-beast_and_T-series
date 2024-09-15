@@ -22,6 +22,8 @@
                 messageElement.innerHTML = "Android";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 messageElement.innerHTML = "Ça pue l'apple";
+            } else if (userAgent.indexOf('Linux') !== -1) {
+                messageElement.innerHTML = "Bienvenue sur Linux";
             } else {
                 messageElement.innerHTML = "Système d'exploitation non reconnu";
             }
