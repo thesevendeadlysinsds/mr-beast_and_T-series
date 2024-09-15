@@ -7,29 +7,36 @@
 </head>
 <body>
     <p style="font-size: 2em;" id="message"></p>
+    <img src="" alt="" id="img" style="width: auto; max-height: 80vh;">
 
     <script>
         // Fonction pour détecter le système d'exploitation
         function detectOS() {
             var userAgent = window.navigator.userAgent;
             var messageElement = document.getElementById('message');
+            var imgElement = document.getElementById('img');
 
             if (userAgent.indexOf('Windows NT') !== -1) {
                 messageElement.innerHTML = "Le bonus pête moi l'anus";
+                imgElement.src = 'https://images.frandroid.com/wp-content/uploads/2021/06/windows-11-logo-hero.jpg';
             } else if (userAgent.indexOf('Mac OS X') !== -1) {
                 messageElement.innerHTML = "Vous êtes sur macintosh";
+                imgElement.src = 'https://images.bfmtv.com/HQYz2iPOE1d7AFxpNcxmQ29-oww=/0x0:2048x1365/580x0/images/Renault-R5-1813482.jpg'; // Image pour macOS
             } else if (userAgent.indexOf('Android') !== -1) {
                 messageElement.innerHTML = "Android";
+                imgElement.src = 'https://image.over-blog.com/XLmd-F4N9LbS-je1rv1FNCa5X_o=/filters:no_upscale()/image%2F2963192%2F20221211%2Fob_a790e6_fonctionnalites-android.png'; // Image pour Android
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 messageElement.innerHTML = "Ça pue l'apple";
+                imgElement.src = 'https://images.bfmtv.com/HQYz2iPOE1d7AFxpNcxmQ29-oww=/0x0:2048x1365/580x0/images/Renault-R5-1813482.jpg'; // Image pour Apple
             } else if (userAgent.indexOf('Linux') !== -1) {
                 messageElement.innerHTML = "Bienvenue sur Linux";
+                imgElement.src = 'https://easy-rental.fr/wp-content/uploads/2017/07/Linux-logo-without-version-number-banner-sized.jpg'; // Image pour Linux
             } else {
                 messageElement.innerHTML = "Système d'exploitation non reconnu";
+                imgElement.src = ''; // Pas d'image par défaut
             }
         }
 
-        // Appeler la fonction à l'ouverture de la page
         detectOS();
     </script>
 </body>
