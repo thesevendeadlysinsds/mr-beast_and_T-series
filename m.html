@@ -3,34 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détection de l'appareil</title>
+    <title>Résolution de l'écran</title>
 </head>
 <body>
-    <p id="message"></p>
+    <p id="resolution"></p>
 
     <script>
-        // Fonction pour détecter l'appareil
-        function detectDevice() {
-            var userAgent = window.navigator.userAgent;
-            var messageElement = document.getElementById('message');
-
-            if (/iPhone|iPad|iPod|Macintosh/.test(userAgent)) {
-                messageElement.innerHTML = "Votre appareil est Apple";
-            } else if (userAgent.indexOf('Xiaomi') !== -1) {
-                messageElement.innerHTML = "Votre appareil est Xiaomi";
-            } else if (userAgent.indexOf('Samsung') !== -1) {
-                messageElement.innerHTML = "Votre appareil est Samsung";
-            } else if (userAgent.indexOf('Huawei') !== -1) {
-                messageElement.innerHTML = "Votre appareil est Huawei";
-            } else if (userAgent.indexOf('Xigmatek') !== -1) {
-                messageElement.innerHTML = "Votre appareil est Xigmatek";
-            } else {
-                messageElement.innerHTML = "Appareil non reconnu";
-            }
+        // Fonction pour obtenir la résolution de l'écran
+        function getScreenResolution() {
+            var width = window.screen.width;
+            var height = window.screen.height;
+            var resolutionElement = document.getElementById('resolution');
+            resolutionElement.innerHTML = "Résolution de l'écran : " + width + "px x " + height + "px";
         }
 
         // Appeler la fonction à l'ouverture de la page
-        detectDevice();
+        getScreenResolution();
     </script>
 </body>
 </html>
