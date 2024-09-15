@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection de l'appareil</title>
+</head>
+<body>
+    <p id="message"></p>
+
+    <script>
+        // Fonction pour détecter l'appareil
+        function detectDevice() {
+            var userAgent = window.navigator.userAgent;
+            var messageElement = document.getElementById('message');
+
+            if (/iPhone|iPad|iPod|Macintosh/.test(userAgent)) {
+                messageElement.innerHTML = "Votre appareil est Apple";
+            } else if (userAgent.indexOf('Xiaomi') !== -1) {
+                messageElement.innerHTML = "Votre appareil est Xiaomi";
+            } else if (userAgent.indexOf('Samsung') !== -1) {
+                messageElement.innerHTML = "Votre appareil est Samsung";
+            } else if (userAgent.indexOf('Huawei') !== -1) {
+                messageElement.innerHTML = "Votre appareil est Huawei";
+            } else if (userAgent.indexOf('Xigmatek') !== -1) {
+                messageElement.innerHTML = "Votre appareil est Xigmatek";
+            } else {
+                messageElement.innerHTML = "Appareil non reconnu";
+            }
+        }
+
+        // Appeler la fonction à l'ouverture de la page
+        detectDevice();
+    </script>
+</body>
+</html>
