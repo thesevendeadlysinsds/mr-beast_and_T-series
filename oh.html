@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection OS</title>
+</head>
+<body>
+    <p style="font-size: 2em;" id="message"></p>
+
+    <script>
+        // Fonction pour détecter le système d'exploitation
+        function detectOS() {
+            var userAgent = window.navigator.userAgent;
+            var messageElement = document.getElementById('message');
+
+            if (userAgent.indexOf('Windows NT') !== -1) {
+                messageElement.innerHTML = "Le bonus pête moi l'anus";
+            } else if (userAgent.indexOf('Mac OS X') !== -1) {
+                messageElement.innerHTML = "Vous êtes sur macintosh";
+            } else if (userAgent.indexOf('Android') !== -1) {
+                messageElement.innerHTML = "Android";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                messageElement.innerHTML = "Ça pue l'apple";
+            } else {
+                messageElement.innerHTML = "Système d'exploitation non reconnu";
+            }
+        }
+
+        // Appeler la fonction à l'ouverture de la page
+        detectOS();
+    </script>
+</body>
+</html>
